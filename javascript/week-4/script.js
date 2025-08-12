@@ -1,4 +1,125 @@
-// დავალებები
+console.log('სავარჯიშოები: IV კვირა')
+
+// დაწერეთ ფუქნცია, სახელად sayHello, 
+// რომელიც დაპრინტავს - "Hello, World".
+function sayHello() {
+    return 'Hello, World';
+}
+console.log(sayHello());
+
+// დაწერეთ ფუნქცია, სახელად greet, 
+// რომელიც პარამეტრა მიიღებს სახელს და
+// დაპრინტავს - "გამარჯობა, [სახელი]"
+function greet(name) {
+    return console.log(`Hello ${name}`);
+}
+greet('Guram');
+
+// დაწერეთ ფუნქცია, სახელად sum, 
+// რომელიც არგუმენტებად მიიღებს ორ რიცხვს და
+// დააბრუნებს მათ ჯამს. შედეგი გამოიტანეთ ტერმინალში.
+function sum(a, b) {
+    return a + b;
+}
+console.log(`Sum = ${sum(10, 20)}`);
+
+// დაწერეთ ფუნქცია, სახელად calculateArea, 
+// რომელიც არგუმენტად მიიღებს ოთხკუთხედის სიგრესა და სიგანეს და
+// დააბრუნებს მის ფართობს. შედეგი გამოიტანეთ ტერმინალში.
+function calculateArea(hight, width) {
+    const area = hight * width;
+    console.log(`Area = ${area}`);
+}
+calculateArea(3, 5);
+
+// დაწერეთ ფუნქცია, რომელიც მიიღებს ორ არგუმენტს და 
+// დააბრუნებს მათ შორის უდიდესს. გამოიყენეთ სამივე - 
+// Function Declaration, Function Expression, Arrow Function.
+function numDeclaration(a, b) {
+    return a > b ? `Large number is: ${a}` : `Large number is: ${b}`;
+}
+console.log(numDeclaration(2, 3));
+
+const numExpression = function (a, b) {
+    return a > b ? `Large number is: ${a}` : `Large number is: ${b}`;
+}
+console.log(numExpression(2, 3));
+
+const numArrow = (a, b) => a > b ? a : b;
+console.log(`Large number is: ${numArrow(2, 3)}`)
+
+// დაწერეთ ფუქნცია, რომელიც პარამეტრად მიიღებს იმ რაოდენობას, 
+// რამდენჯერად უნდა გამოკონსოლდეს "Hello, World".
+const textQuant = (quant) => {
+    for (let i = 1; i <= quant; i++) {
+        console.log('Hello, World');
+    }
+}
+textQuant(2);
+
+// დაწერეთ ფუქნცია, სახელად celsiusToFahrenheit, 
+// რომელიც პარამეტრად მიიღებს ცელსიუსს და გადაიყვანს ფარენჰეიტში. 
+// ფორმულა - (Celsius * 9/5) + 32
+const celsiusToFahrenheit = (celsius) => {
+    const fahrenheit = (celsius * 9 / 5) + 32;
+    console.log(`Temperature ${fahrenheit.toFixed(2)}°F`);
+}
+celsiusToFahrenheit(22);
+
+// დაწერეთ ფუნქცია სახელად sumDigits, 
+// რომელიც არგუმენტად იღებს რიცხვს და აბრუნებს მისი ციფრების ჯამს.
+const sumDigits = (num) => {
+    let sum = 0;
+    for (let i = 1; i <= num; sum += i, i++) {
+
+    }
+    console.log(`Digits sum of ${num} = ${sum}`)
+}
+sumDigits(2);
+
+// დაწერეთ ფუნქცია სახელად countBs, 
+// რომელიც იღებს სტრიქონს თავის ერთადერთ არგუმენტად და 
+// აბრუნებს სტრიქონში დიდი "B" სიმბოლოების რაოდენობას.
+const countBs = (text) => {
+    let count = 0
+    for (let i = 0; i < text.length; i++) {
+        if (text[i] === 'B') { count++ };
+    }
+    console.log(`Number of letters "B" in the word ${text} = ${count}`);
+}
+countBs('BumbleBee');
+
+// დაწერეთ ფუნქცია, რომელიც მიიღებს ორ პარამეტრს და 
+// დააჯამებს ყველა რიცხვს გარკვეულ შუალედში. 
+// მაგალითად შეკრიბავს რიცხვებს 5-დან 100-მდე.
+const sumDigitsBetween = (a, b) => {
+    let sum = 0;
+    for (let i = a; i <= b; i++) {
+        sum += i;
+    }
+    console.log(`Sum from (${a} - ${b}) = ${sum}`)
+}
+sumDigitsBetween(5, 100);
+
+// დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს სტრინგს და 
+// დააბრუნებს true-ს თუ სტრინგი არის პალინდრომი 
+// (თავიდან და ბოლოდან იგივენარიად იწერება) და false-ს თუ არაა პალინდრომი.
+const palindrome = (word) => {
+    let lowerCase = word.toLowerCase();
+    let reverseWord = '';
+    for (let i = lowerCase.length - 1; i >= 0; i--) {
+        reverseWord += lowerCase[i]
+    }
+    reverseWord === lowerCase
+        ? console.log(`Yes word "${word}" is palindrome`)
+        : console.log(`No word "${word}" is not palindrome`);
+
+}
+palindrome('Level')
+
+
+console.group('დავალებები:')
+
 // პროექტი 1 - Saying Hello - გამარჯობა
 // შექმენით პროგრამა რომელიც გკითხავთ "რა გქვია?", 
 // დაელოდება თქვენს პასუხს და გიპახუსებთ "გამარჯობა, თქვენი სახელი"
@@ -13,7 +134,7 @@ const sayingHello = () => {
     const name = prompt('What is your name');
     console.log(`Hello, ${name}`);
 }
-// sayingHello();
+sayingHello();
 
 
 // პროექტი 2 - Counting the Number of Characters - სიმბოლოების რაოდენობის დათვლა
@@ -212,35 +333,71 @@ const madLibs = () => {
 // > Guess: 3
 // > Just right!
 
+const guessingGame = () => {
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    let inputNumber;
+    let numberIsValid;
 
-// let randomNumber = Math.floor(Math.random() * 100) + 1;
-// console.log(randomNumber)
-// do {
-//     inputNumber = Number(prompt('Guess the secret number from 1 to 100:'));
+    console.log(randomNumber); //Test mode
 
-// } while (!Number.isInteger(inputNumber) || inputNumber < 1 || inputNumber > 100);
-// console.log('Just right!')
+    do {
+        inputNumber = Number(prompt('Guess the secret number from 1 to 100:'));
+        do {
+            if (inputNumber > randomNumber) {
+                inputNumber = Number(prompt('Too large!'));
+            } else if (inputNumber < randomNumber) {
+                inputNumber = Number(prompt('Too small!'));
+            }
+            numberIsValid = Number.isInteger(inputNumber) && inputNumber >= 1 && inputNumber <= 100;
+        } while (numberIsValid && inputNumber !== randomNumber);
+
+    } while (!numberIsValid || inputNumber !== randomNumber);
+
+    console.log('Just right!');
+}
+// guessingGame();
 
 
-// 
+
 
 // პროექტი 9 - Little Professor - პატარა პროფესორი
 // https://www.youtube.com/embed/ZuJwzH9BIgs?si=niOBFdZwuDBA94vx"
 
-// ბავშვობაში დევიდის ერთ-ერთი პირველი სათამაშო იყო "პატარა პროფესორი", „კალკულატორი“, რომელიც დავითისთვის ათ სხვადასხვა მათემატიკურ ამოცანას ადგენდა. თუ სათამაშო 4 + 0 = აჩვენებდა, დავითი 4-ს ჩაწერდა, 4 + 1 = -ის შემთხვევაში, 5-ს. თუ დავითი პასუხს არასწორად გასცემდა, სათამაშო EEE-ს ბეჭდავდა. საბოლოოდ, ერთი და იმავე კალკულაციაზე სამი არასწორი პასუხის შემდეგ, სათამაშო უბრალოდ სწორ პასუხს აჩვენებდა (მაგ., 4 + 0 = 4 ან 4 + 1 = 5).
+// ბავშვობაში დევიდის ერთ-ერთი პირველი სათამაშო იყო "პატარა პროფესორი", 
+// „კალკულატორი“, რომელიც დავითისთვის ათ სხვადასხვა მათემატიკურ ამოცანას ადგენდა.
+// თუ სათამაშო 4 + 0 = აჩვენებდა, დავითი 4-ს ჩაწერდა, 4 + 1 = -ის შემთხვევაში,
+// 5-ს. თუ დავითი პასუხს არასწორად გასცემდა, 
+// სათამაშო EEE-ს ბეჭდავდა. საბოლოოდ, ერთი და იმავე კალკულაციაზე 
+// სამი არასწორი პასუხის შემდეგ, სათამაშო უბრალოდ სწორ პასუხს აჩვენებდა 
+// (მაგ., 4 + 0 = 4 ან 4 + 1 = 5).
 
 // დაწერეთ პროგრამა, რომელიც:
 
 // მოუწოდებს მომხმარებელს, აირჩიოს თამაშის დონე,
-// . თუ მომხმარებელი არ ჩაწერს 1, 2 ან 3-ს, პროგრამამ იგივე შეკითხვა კვლავ უნდა დასვას.
 
-// შემთხვევითობის პრინციპით წარმოქმნის ათ (10) მათემატიკურ ამოცანას, ფორმატირებულს, როგორც X + Y = , სადაც თითოეული X და Y არის დადებითი მთელი რიცხვი.
+// . თუ მომხმარებელი არ ჩაწერს 1, 2 ან 3-ს, 
+// პროგრამამ იგივე შეკითხვა კვლავ უნდა დასვას.
 
-// სთხოვს მომხმარებელს, გადაჭრას თითოეული ეს პრობლემა. თუ პასუხი არ არის სწორი (ან საერთოდ, რიცხვი არაა), პროგრამამ უნდა დაწეროს EEE და კვლავ იგივე ამოცანა დაუბეჭდოს მომხმარებელს, რაც მომხმარებელს საშუალებას მისცემს, ამ პრობლემის გადასაჭრელად სულ სამი ცდა გამოიყენოს. თუ მომხმარებელი სწორ პასუხს სამი ცდის შემდეგაც ვერ დაწერს, პროგრამამ სწორი პასუხი თვითონ უნდა დაუწეროს.
+// შემთხვევითობის პრინციპით წარმოქმნის ათ (10) მათემატიკურ ამოცანას, 
+// ფორმატირებულს, როგორც X + Y = , სადაც თითოეული X და Y არის დადებითი მთელი რიცხვი.
 
-// საბოლოო ჯამში, პროგრამამ უნდა დაბეჭდოს მომხმარებლის ქულა: სწორი პასუხების რაოდენობა 10-დან.
+// სთხოვს მომხმარებელს, გადაჭრას თითოეული ეს პრობლემა.
+// თუ პასუხი არ არის სწორი (ან საერთოდ, რიცხვი არაა), 
+// პროგრამამ უნდა დაწეროს EEE და კვლავ იგივე ამოცანა დაუბეჭდოს მომხმარებელს, 
+// რაც მომხმარებელს საშუალებას მისცემს, ამ პრობლემის გადასაჭრელად 
+// სულ სამი ცდა გამოიყენოს. თუ მომხმარებელი სწორ პასუხს 
+// სამი ცდის შემდეგაც ვერ დაწერს, პროგრამამ სწორი პასუხი თვითონ უნდა დაუწეროს.
 
-// შექმენით თქვენი პროგრამა შემდეგნაირად, სადაც ერთი ფუნქცია მოუწოდებს (და საჭიროების შემთხვევაში ხელახლა ეკითხება) მომხმარებელს თამაშის დონის არჩევისკენ და აბრუნებს 1, 2 ან 3-ს; მეორე ფუნქცია - აბრუნებს შემთხვევით გენერირებულ დადებით მთელ რიცხვს, დონის ციფრების გათვალისწინებით, ან ბეჭდავს შეცდომის შეტყობინებას (error message), თუ დონე არ არის 1, 2 ან 3.
+// საბოლოო ჯამში, პროგრამამ უნდა დაბეჭდოს მომხმარებლის ქულა: 
+// სწორი პასუხების რაოდენობა 10-დან.
+
+// შექმენით თქვენი პროგრამა შემდეგნაირად, 
+// სადაც ერთი ფუნქცია მოუწოდებს (და საჭიროების შემთხვევაში ხელახლა ეკითხება) 
+// მომხმარებელს თამაშის დონის არჩევისკენ და აბრუნებს 1, 2 ან 3-ს; 
+// მეორე ფუნქცია - აბრუნებს შემთხვევით გენერირებულ დადებით მთელ რიცხვს, 
+// დონის ციფრების გათვალისწინებით, 
+// ან ბეჭდავს შეცდომის შეტყობინებას (error message), 
+// თუ დონე არ არის 1, 2 ან 3.
 
 // მაგალითად:
 
@@ -267,3 +424,53 @@ const madLibs = () => {
 // > 2 + 2 = 4
 // > 0 + 0 = 0
 // > Score: 8
+
+const littleProfessor = () => {
+    let exerciseCount = 10;
+    let level;
+    let score = exerciseCount;
+    let digitCount;
+
+    do {
+        level = Number(prompt('Enter level 1, 2 or 3'));
+    } while (level !== 1 && level !== 2 && level !== 3)
+
+    switch (level) {
+        case 1: digitCount = 10; break;
+        case 2: digitCount = 100; break;
+        case 3: digitCount = 1000; break;
+    };
+
+
+    while (exerciseCount > 0) {
+        --exerciseCount;
+        let x = Math.floor(Math.random() * digitCount) + 0;
+        let y = Math.floor(Math.random() * digitCount) + 0;
+        let trueAnswer = x + y;
+        let answer;
+        let attempts = 0;
+
+        while (true) {
+            ++attempts;
+            let inputAnswer = prompt(`Enter answer: ${x}+${y}=`);
+            inputAnswer == trueAnswer ? answer = true : answer = false;
+            if (answer) {
+                console.log(`${x}+${y}=${trueAnswer}`);
+                break;
+            } else if (attempts === 3) {
+                console.log(`${x}+${y}=${trueAnswer}`);
+                --score;
+                break;
+            } else {
+                console.log(`${x}+${y}=${inputAnswer}`);
+                console.log('EEE')
+            }
+        }
+    }
+    console.log(`Score: ${score}`)
+}
+// littleProfessor()
+
+
+
+
